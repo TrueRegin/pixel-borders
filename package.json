@@ -1,5 +1,13 @@
 {
-  "devDependencies": {
-    "sass": "^1.35.1"
-  }
+    "name": "pixel-borders",
+    "version": "1.0.0",
+    "description": "Cool pixel art borders using css border-image property",
+
+    "repository": "https://github.com/TrueRegin/pixel-borders.git",
+    "author": "TrueRegin <36866793+TrueRegin@users.noreply.github.com>",
+    "license": "MIT",
+    
+    "devDependencies": {
+        "sass": "^1.35.1"
+    }
 }
