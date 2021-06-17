@@ -1,0 +1,36 @@
+.frame-container {
+    width: 96px;
+    height: 96px;
+    background: linear-gradient(185deg, #000, #335);
+    image-rendering: pixelated;
+    
+    .pixel-frame {
+        border: 16px solid transparent;
+        border-image: url(../assets/border.png) 4 stretch;
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+    
+        & img {
+            width: 100%;
+            height: 100%;
+        }
+
+    }
+}
+
+.hoverable {
+    width: max-content;
+    height: max-content;
+    
+    & > * {
+        transition: filter 0.11s, transform 0.05s;
+        cursor: pointer;
+
+        &:hover {
+            filter: brightness(1.25);
+            transform: rotateX(20deg) rotateZ(-0.8deg);
+        }
+    }
+}
