@@ -1,8 +1,60 @@
+body, html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    display: grid;
+    grid-template-rows: minmax(15%, 150px) 1fr;
+}
+
+header {
+    background: #1a1a27;
+    color: #fffff6;
+    padding: 20px;
+    display: grid;
+    align-items: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+@keyframes ambient-bg-motion {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 240px 80px;
+    }
+}
+
+#container {
+    display: grid;
+    background: url(../assets/background.png);
+    background-repeat: repeat;
+    animation: ambient-bg-motion 6s infinite linear;
+    background-position: 0% 0%;
+    background-size: 80px 80px;
+    height: 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(100px, max-content));
+    grid-auto-rows: 100px;
+    gap: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+    place-items: center;
+    image-rendering: pixelated;
+}
+
 .frame-container {
     width: 96px;
     height: 96px;
     background: linear-gradient(185deg, #000, #335);
     image-rendering: pixelated;
+    user-select: none;
+    box-shadow: 0 0 5px #fff5;
     
     .pixel-frame {
         border: 16px solid transparent;
@@ -11,7 +63,7 @@
         height: 100%;
         padding: 10px;
         box-sizing: border-box;
-    
+        
         & img {
             width: 100%;
             height: 100%;
@@ -26,11 +78,16 @@
     
     & > * {
         transition: filter 0.11s, transform 0.05s;
+        transition-timing-function: ease;
         cursor: pointer;
 
         &:hover {
             filter: brightness(1.25);
             transform: rotateX(20deg) rotateZ(-0.8deg);
         }
+    }
+
+    &.active > * {
+        transform: scale(0.95) rotateX(20deg) rotateZ(-0.8deg);
     }
 }

@@ -1,19 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pixel Borders</title>
-    <link rel="stylesheet" href="./style/main.scss">
-</head>
-<body>
-    <div class="hoverable">
-        <div class="frame-container">
-            <div class="pixel-frame">
-                <img src="./assets/items/1.png" alt="A yellow crystal surrounded by two borders, a dark blue and then purple one.">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Pixel Borders</title>
+        <link rel="stylesheet" href="./style/main.scss" />
+    </head>
+    <body>
+        <header id="header">
+            <h1 id="title">Pixel Borders</h1>
+            <h3 id="subtitle">Click a box to swap the sprite right click to remove a sprite.</h3>
+        </header>
+        <div id="container">
+            <div class="hoverable">
+                <div class="frame-container">
+                    <div class="pixel-frame">
+                        <img
+                            src="./items/4.png"
+                        />
+                    </div>
+                </div>
+            </div>
+            <div class="hoverable">
+                <div class="frame-container">
+                    <div class="pixel-frame">
+                        <img
+                            src="./items/3.png"
+                        />
+                    </div>
+                </div>
+            </div>
+            <div class="hoverable">
+                <div class="add-item"></div>
             </div>
         </div>
-    </div>
-</body>
+        <script src="./src/main.ts" type="module"></script>
+    </body>
 </html>
