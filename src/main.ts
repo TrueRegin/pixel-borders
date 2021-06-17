@@ -1,6 +1,6 @@
 /**
  * Handles adding the initial images to the screen
- * TODO
+ * TODO (just kidding it won't happen because it's unimportant)
  */
 const INITIAL_AMT = 5
 
@@ -75,7 +75,7 @@ function _initialize_item(item: HTMLDivElement) {
  * Generates a url to a pixel art sprite in /public/items
  * This method makes sure we don't repeat images (hence why we accept the old iamge url of an image)
  */
-const IMAGE_LEN = 4;
+const IMAGE_LEN = 7;
 function get_random_image(old_src: string = "") {
     let new_src = old_src
     while(old_src.includes(new_src)) {
