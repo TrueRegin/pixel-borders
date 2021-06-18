@@ -28,6 +28,17 @@ body {
     }
 }
 
+a {
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.2s;
+    width: max-content;
+
+    &:hover {
+        opacity: 0.5;
+    }
+}
+
 @keyframes pulse {
     from, to {
         transform: translate(0, 0), scale(0), rotate(0)
@@ -50,6 +61,7 @@ header {
     display: grid;
     align-items: center;
     position: relative;
+    user-select: none;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -77,6 +89,7 @@ h1, h2, h3, h4, h5, h6 {
     cursor: pointer;
     z-index: 10;
     backdrop-filter: blur(10px);
+    animation: pop-in ease 0.5s;
 
     &::after {
         content: "+";

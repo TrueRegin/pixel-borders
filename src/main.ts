@@ -43,6 +43,7 @@ $AddButton.addEventListener('mouseup', () => {
  */
 function _gen_item(i = -1) {
     const image = document.createElement('img')
+    image.setAttribute('draggable', String(false));
     if(i === -1) image.src = get_random_image()
     else image.src = get_image(i);
     const pixelFrame = document.createElement('div')
