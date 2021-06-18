@@ -1,8 +1,15 @@
 /**
- * Handles adding the initial images to the screen
- * TODO (just kidding it won't happen because it's unimportant)
+ * Handles adding the initial "N" images to the screen
  */
-const INITIAL_AMT = 5
+const TOTAL_IMAGES = 7;
+const WAIT_AMT = 90 // Stagger amount in ms
+const STAGGER_AMT = 27 // Stagger amount in ms
+for(let i = 0; i <  TOTAL_IMAGES; i++) {
+    let item = _gen_item(i + 1);
+    setTimeout(() => {
+        $ItemContainer.append(item);
+    }, WAIT_AMT + i * STAGGER_AMT);
+}
 
 /**
  * Handles adding items to the screen.
@@ -34,9 +41,10 @@ $AddButton.addEventListener('mouseup', () => {
 /**
  * Creates an HTML item to be added to the screen.
  */
-function _gen_item() {
+function _gen_item(i = -1) {
     const image = document.createElement('img')
-    image.src = get_random_image()
+    if(i === -1) image.src = get_random_image()
+    else image.src = get_image(i);
     const pixelFrame = document.createElement('div')
     pixelFrame.classList.add('pixel-frame')
     const frameContainer = document.createElement('div')
@@ -75,11 +83,10 @@ function _initialize_item(item: HTMLDivElement) {
  * Generates a url to a pixel art sprite in /public/items
  * This method makes sure we don't repeat images (hence why we accept the old iamge url of an image)
  */
-const IMAGE_LEN = 7;
 function get_random_image(old_src: string = "") {
     let new_src = old_src
     while(old_src.includes(new_src)) {
-        const random_num = Math.floor(Math.random() * IMAGE_LEN) + 1;
+        const random_num = Math.floor(Math.random() * TOTAL_IMAGES) + 1;
         new_src = get_image(random_num)
     }
     return new_src;
